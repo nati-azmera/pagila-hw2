@@ -7,3 +7,12 @@
  * For this problem, you should use the NOT IN clause;
  * in problem 06b you will use the LEFT JOIN clause.
  */
+
+
+select distinct(title) 
+from film 
+where film_id not in (
+select distinct(film_id) 
+from inventory 
+order by film_id) 
+order by 1;
